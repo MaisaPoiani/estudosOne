@@ -32,17 +32,17 @@ const AblyChatComponent = () => {
 
       const handleFormSubmission = (e) => {
           e.preventDefault();
-          console.log(e);
-        //   sendChatMessage(messageText);
+          // console.log(e);
+          sendChatMessage(messageText);
         }
 
       // enviar mensagem ao precionar enter
       const handleKeyPress = (e) => {
-        if (e.charCode !== 1 || messageTextIsEmpty) { // idéia original: usar e.charCode -> browser mostra erro, is not defined
+        if (e.charCode !== 13 || messageTextIsEmpty) { // idéia original: usar e.charCode -> browser mostra erro, is not defined
           return;
         }
-        sendChatMessage(messageText);
         e.preventDefault();
+        sendChatMessage(messageText);
       }
        
       // -- Construindo a UI  -- verificando as mensagens já existentes
