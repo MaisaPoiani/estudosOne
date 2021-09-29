@@ -29,16 +29,14 @@ const AblyChatComponent = () => {
         setMessageText("");
         inputBox.focus();
       }
-
       const handleFormSubmission = (e) => {
           e.preventDefault();
           // console.log(e);
           sendChatMessage(messageText);
         }
-
       // enviar mensagem ao precionar enter
       const handleKeyPress = (e) => {
-        if (e.charCode !== 13 || messageTextIsEmpty) { // idéia original: usar e.charCode -> browser mostra erro, is not defined
+        if (e.charCode !== 13 || messageTextIsEmpty) { 
           return;
         }
         e.preventDefault();
